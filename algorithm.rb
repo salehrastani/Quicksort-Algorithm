@@ -4,9 +4,22 @@ def sort(items)
 
   if items.length <= 1
     return items
-
+  else
+    pivot = items.sample
+    pivot_index = items.find_index(pivot)
+    p "pivot_index: #{pivot_index}, pivot: #{pivot}"
+    items.delete(pivot)
   end
 
+  swap = false
+
+  items.each_with_index do |item, index|
+    if item <= pivot
+      less << item
+    else
+      greater << item
+    end
+  end
 
 end
 
