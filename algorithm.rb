@@ -16,15 +16,22 @@ def sort(items)
   items.each_with_index do |item, index|
     if item <= pivot
       less << item
+
     else
       greater << item
+
     end
   end
 
   less.push(pivot)
   new_array = less.concat(greater)
   p "this is the new array: #{new_array}"
-  sort(new_array)
+
+   if swap
+     sort(new_array)
+   else
+     new_array
+   end
 end
 
 
