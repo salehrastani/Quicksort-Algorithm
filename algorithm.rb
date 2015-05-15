@@ -1,6 +1,9 @@
 # quicksort in ruby
 
 def sort(items)
+  less = []
+  greater = []
+#   p items
 
   if items.length <= 1
     return items
@@ -14,12 +17,16 @@ def sort(items)
   swap = false
 
   items.each_with_index do |item, index|
-    if item <= pivot
+    if item < pivot
       less << item
-
+      if index > pivot_index
+          swap = true
+      end
     else
       greater << item
-
+        if index <= pivot_index
+          swap = true
+        end
     end
   end
 
