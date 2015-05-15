@@ -13,7 +13,7 @@ def sort(items)
     items.delete(pivot)
   end
 
-  items.each_with_index do |item, index|
+  items.each do |item|
     if item <= pivot
       less << item
     else
@@ -21,9 +21,9 @@ def sort(items)
     end
   end
 
-  sorted_array << quicksort(less)
+  sorted_array << sort(less)
   sorted_array << pivot
-  sorted_array << quicksort(greater)
+  sorted_array << sort(greater)
 end
 
 
