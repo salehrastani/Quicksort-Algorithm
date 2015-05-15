@@ -24,6 +24,7 @@ def sort(items)
   sorted_array << sort(less)
   sorted_array << pivot
   sorted_array << sort(greater)
+  sorted_array.flatten!
 end
 
 
