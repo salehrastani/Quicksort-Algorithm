@@ -21,6 +21,10 @@ def sort(items)
     end
   end
 
+  less.push(pivot)
+  new_array = less.concat(greater)
+  p "this is the new array: #{new_array}"
+  sort(new_array)
 end
 
 
